@@ -16,6 +16,10 @@ public class Comparador {
 
     private static String mensaje;
 
+    public static void setMensaje(String mensaje) {
+        Comparador.mensaje = mensaje;
+    }
+
     // declaro intentos para poder contar los intentos
     public static String getMensaje() {
         return mensaje;

@@ -18,6 +18,23 @@ public class ComparadorCompuAdivina {
     private int IntentosCompu = 0;
     private int numCompu = (int) (Math.random() * 100 + 1);
 //creo los gets y sets de las variables privadas
+
+    public int getVarMax() {
+        return varMax;
+    }
+
+    public void setVarMax(int varMax) {
+        this.varMax = varMax;
+    }
+
+    public int getVarMenor() {
+        return varMenor;
+    }
+
+    public void setVarMenor(int varMenor) {
+        this.varMenor = varMenor;
+    }
+    
     public int getIntentosCompu() {
         return IntentosCompu;
     }
@@ -34,28 +51,30 @@ public class ComparadorCompuAdivina {
         this.numCompu = numCompu;
     }
 //metodo que analiza cuando el numero a adivinar es menor al que mostro la compu
-    public void menos() {
+    public String menos() {
 //analizo el limite
         if (varMax >= numCompu) {
-            varMax = numCompu;
+            varMax = numCompu-1;
         }
 // busco un numero aletorio entre los limites establecidos 
         numCompu = (int) (Math.random() * (varMax - varMenor) + (varMenor));
-        Compuadivina.txtCompu.append("asi que mas chico entonces es " + numCompu + "\n");
-                //subo 1 el acumulador de intentos de la compu
+       if (numCompu==0) numCompu=1;
+        //subo 1 el acumulador de intentos de la compu
         IntentosCompu = IntentosCompu + 1;
+        return ("asi que mas chico entonces es " + numCompu + "\n");
     }
 //metodo que analiza cuando el numero a adivinar es mayor al que mostro la compu
-    public void mas() {
+    public String mas() {
 //Actualizo el limite menor 
         if (varMenor <= numCompu) {
-            varMenor = numCompu;
+            varMenor = numCompu+1;
         }
 // calculo un numero aletorio entre los limites establecidos
         numCompu = (int) (Math.random() * (varMax - varMenor) + (varMenor));
-        Compuadivina.txtCompu.append("asi que mas grande entonces es " + numCompu + "\n");
+        
         //subo 1 el acumulador de intentos de la compu
         IntentosCompu = IntentosCompu + 1;
+        return ("asi que mas grande entonces es " + numCompu + "\n");
     }
 
 }

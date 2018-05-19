@@ -113,11 +113,13 @@ public class Compuadivina extends javax.swing.JFrame {
 
     private void MasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActionPerformed
 
-        compu.mas();
+       String mensaje=compu.mas();
+       txtCompu.append(mensaje);
     }//GEN-LAST:event_MasActionPerformed
 
     private void MenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActionPerformed
-        compu.menos();
+        String mensaje=compu.menos();
+        txtCompu.append(mensaje);
     }//GEN-LAST:event_MenosActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -136,9 +138,9 @@ public class Compuadivina extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        txtCompu.setText("¿Tu numero es " + compu.getNumCompu() + "?\n");
+       
         compu = new ComparadorCompuAdivina();
-
+ txtCompu.setText("¿Tu numero es " + compu.getNumCompu() + "?\n");
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

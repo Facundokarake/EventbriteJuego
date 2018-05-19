@@ -40,6 +40,7 @@ public class Main {
 
     public static int reset() {
         numComputadora = (int) (Math.random() * 100 + 1);
+        Intentos = 1;
         Juego.jButton1.setEnabled(true);
         Juego.txtPersona.setText("");
         return numComputadora;
